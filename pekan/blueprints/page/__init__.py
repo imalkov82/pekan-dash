@@ -1,0 +1,1 @@
+from pekan.blueprints.page.views import page
