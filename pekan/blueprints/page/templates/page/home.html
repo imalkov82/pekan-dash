@@ -5,28 +5,52 @@
 {% block body %}
     <div class="container sm-margin-top">
         <div class="row text-center lg-margin-bottom">
-            <h1>Pecube-Dash</h1>
-            <h3 class="text-muted">
+            <h1 class="pecube-fonts">Pecube-Dash</h1>
+            <h3 class="text-muted pecube-fonts">
                 Create inputs and manage execution of Pecube model
             </h3>
         </div>
     </div>
-<div class="row text-center">
-      <div class="col-lg-7">
-          <i class="fa fa-fw fa-4x fa-cubes text-primary"></i>
-          <h2>Explore results</h2>
-          <p class="text-muted">Lookup for previous executions status and results</p>
-          <p>
-            <a href="#" class="btn btn-default">Lookup</a>
-          </p>
-      </div>
-      <div class="col-lg-3">
-          <i class="fa fa-fw fa-4x fa-paper-plane-o text-primary"></i>
-          <h2>Create execution</h2>
-          <p class="text-muted">Construct input parameters for execution</p>
-          <p>
-            <a href="#" class="btn btn-default">Construct</a>
-          </p>
-      </div>
+    <div class="row text-center">
+        <div class="col-lg-7">
+            <i class="fa fa-fw fa-3x fa-cubes text-primary"></i>
+            <h2 class="pecube-fonts">Explore results</h2>
+            <p class="text-muted pecube-fonts">Lookup for previous executions status and results</p>
+            <p>
+                <a href="{{ url_for('page.results') }}" class="btn btn-default pecube-fonts">Lookup</a>
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <i class="fa fa-fw fa-3x fa-paper-plane-o text-primary"></i>
+            <h2 class="pecube-fonts">Create execution</h2>
+            <p class="text-muted pecube-fonts">Construct input parameters for execution</p>
+            <p>
+                <a href="{{ url_for('page.execution') }}" class="btn btn-default pecube-fonts">Construct</a>
+            </p>
+        </div>
     </div>
+    <div>
+{% endblock %}
+{% block pecubeinfo %}
+    <hr/>
+    <p></p>
+    <h2 class="text-center text-blue">Pecube model</h2>
+    <p></p>
+    <p>
+        If you do not want to be tracked by Google Analytics you may opt-out using
+        <a target="_blank" href="https://tools.google.com/dlpage/gaoptout/">
+            Google&#39;s official opt-out browser add-on
+        </a>.
+    </p>
+    <p></p>
+    <h2 class="text-center text-blue">User manual:</h2>
+    <p></p>
+    <p>
+        Add manual here
+    </p>
+{% endblock %}
+{% block footer %}
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms of Service</a></li>
 {% endblock %}
