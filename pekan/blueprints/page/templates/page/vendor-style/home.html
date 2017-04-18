@@ -1,0 +1,62 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Pecube{% endblock %}
+{% block meta_description %}Pecube model heat transfer 3D solver.{% endblock %}
+{% block body %}
+    <div class="container sm-margin-top">
+        <div class="row text-center lg-margin-bottom">
+            <h1 class="pecube-fonts">Pecube-Dash</h1>
+            <h3 class="text-muted pecube-fonts">
+                Create inputs and manage execution of Pecube model
+            </h3>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-lg-7">
+            <i class="fa fa-fw fa-3x fa-cubes text-primary"></i>
+            <h2 class="pecube-fonts">Explore results</h2>
+            <p class="text-muted pecube-fonts">Lookup for previous executions status and results</p>
+            <p>
+                <a href="{{ url_for('page.results') }}" class="btn btn-default pecube-fonts">Lookup</a>
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <i class="fa fa-fw fa-3x fa-paper-plane-o text-primary"></i>
+            <h2 class="pecube-fonts">Create execution</h2>
+            <p class="text-muted pecube-fonts">Construct input parameters for execution</p>
+            <p>
+                <a href="{{ url_for('page.execution') }}" class="btn btn-default pecube-fonts">Construct</a>
+            </p>
+        </div>
+    </div>
+    <div>
+{% endblock %}
+{% block pecubeinfo %}
+    <div class="row">
+{#        <div class="col-lg-1">#}
+{#            <p></p>#}
+{#        </div>#}
+        <div class="col-lg-4">
+            <h3><p class="pecube-fonts">Pecube Model</p></h3>
+        </div>
+        <div class="col-lg-6">
+            <p class="pecube-fonts">Pecube has been developed as a user-friendly ForTran90
+program. The user can describe the problem to solve in
+one of two ways (Fig. 3): through a detailed ASCII input
+file (Pecube.in) or by modifying one of the subroutines
+(create pecube in.f90) which will create the input file. The format of the input file has been designed for ease-of-use
+by non-specialists, yet it permits to solve a large range of
+tectonically interesting problems. It includes basic infor-
+mation such as the number of nodes, their horizontal
+coordinates, the number and type of elements, and the
+connectivity matrix (relating the elements to the nodes).
+</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms of Service</a></li>
+{% endblock %}

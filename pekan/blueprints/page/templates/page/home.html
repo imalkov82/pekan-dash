@@ -1,56 +1,46 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %}Pecube{% endblock %}
-{% block meta_description %}Pecube model heat transfer 3D solver.{% endblock %}
+{% block title %}pecube{% endblock %}
+{% block meta_description %}pecube model heat transfer 3d solver.{% endblock %}
 {% block body %}
     <div class="container sm-margin-top">
-        <div class="row text-center lg-margin-bottom">
-            <h1 class="pecube-fonts">Pecube-Dash</h1>
-            <h3 class="text-muted pecube-fonts">
-                Create inputs and manage execution of Pecube model
-            </h3>
+        <div class="row lg-margin-top">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-7">
+                <a href="{{ url_for('page.home') }}">
+                    <img src="{{ url_for('static', filename='images/pecubeLogo.png') }}"
+                         class="img-responsive"
+                         width="500" height="120" title="pecube" alt="pecube"/>
+                </a>
+            </div>
         </div>
     </div>
-    <div class="row text-center">
-        <div class="col-lg-7">
-            <i class="fa fa-fw fa-3x fa-cubes text-primary"></i>
-            <h2 class="pecube-fonts">Explore results</h2>
-            <p class="text-muted pecube-fonts">Lookup for previous executions status and results</p>
-            <p>
-                <a href="{{ url_for('page.results') }}" class="btn btn-default pecube-fonts">Lookup</a>
-            </p>
-        </div>
-        <div class="col-lg-3">
-            <i class="fa fa-fw fa-3x fa-paper-plane-o text-primary"></i>
-            <h2 class="pecube-fonts">Create execution</h2>
-            <p class="text-muted pecube-fonts">Construct input parameters for execution</p>
-            <p>
-                <a href="{{ url_for('page.execution') }}" class="btn btn-default pecube-fonts">Construct</a>
+    <div class="container sm-margin-top fa-th-large"><div class="row lg-margin-top"></div></div>
+    <div class="container container-full">
+        <div class="row well-lg">
+            <h1 class="text-center">Pecube model</h1>
+            <p style="font-size: large; text-align: justify">
+                Pecube is finite element code that has been developed as a user-friendly ForTran90 program.
+                Pecube solves the heat transport equation in three dimensions with purpose of testing geomorphic and tectonic scenarios against thermochronological data.
+                The code includes the effect of heat conduction and advection (resulting from tectonic transport, such as movement along faults or block uplift/subsidence), heat production by radioactive elements in the crust or resulting from shear heating, the effect of finite amplitude topography.
+                This new version incorporates many changes, including the ability to predict ages below the surface (in a tunnel or in a well), to use surface geometries derived from a surface processes model, such as CASCADE, reading an external topography files constructed on an irregular (triangular) discretization, etc. We have also incorporated the Neighbourhood Algorithm of Malcolm Sambridge into PECUBE in its parallelized form to enable the direct inversion of thermochronological data. We have also enriched the library of thermochronological systems that can be predicted, including Richard Ketcham’s fission track algorithm, as well as included a simple algorithm to predict age distribution at the surface of the model at any arbitrary time in the past, for direct comparison with detrital age distributions.
             </p>
         </div>
     </div>
-    <div>
-{% endblock %}
-{% block pecubeinfo %}
-    <hr/>
-    <p></p>
-    <h2 class="text-center text-blue">Pecube model</h2>
-    <p></p>
-    <p>
-        If you do not want to be tracked by Google Analytics you may opt-out using
-        <a target="_blank" href="https://tools.google.com/dlpage/gaoptout/">
-            Google&#39;s official opt-out browser add-on
-        </a>.
-    </p>
-    <p></p>
-    <h2 class="text-center text-blue">User manual:</h2>
-    <p></p>
-    <p>
-        Add manual here
-    </p>
+    <div class="container container-full">
+        <div class="row well-lg">
+            <h1 class="text-center">User manual</h1>
+            <p style="font-size: large; text-align: justify">
+                Pecube has been developed as a user-friendly ForTran90program.
+                The user can describe the problem to solve in one of two ways (Fig. 3): through a detailed ASCII input file (Pecube.in) or by modifying one of the subroutines (create pecube in.f90) which will create the input file.
+                The format of the input file has been designed for ease-of-use by non-specialists, yet it permits to solve a large range of tectonically interesting problems. It includes basic information such as the number of nodes, their horizontal coordinates, the number and type of elements, and the connectivity matrix (relating the elements to the nodes).
+                For ease of use, it is assumed that thermal properties such as rock conductivity, heat capacity, density and heat production are spatially uniform and constant through time. Other parameters such as crustal thickness, basal temperature, surface temperature and lapse rate must also be defined. The exhumation velocity is assumed to be spatially uniform but can change through time.
+                The surface topography is specified by defining the height above mean sea level of each node at a series of times in the past, t i ; i 1⁄4 1; y; n: Elevation values can be produced from a DEM or derived from the output of a surface processes model (SPM), such as Cascade (Braun and Sambridge, 1997). This is the reason why triangular and rectangular prismatic elements are used in Pecube.
+                The output consists of the complete three-dimensional temperature structure at the times t i as well as pressure (depth) and temperature values experienced through time by rocks that end up at the surface of the model at t n : These P–T–t paths can be used to predict rock ages for any thermochronometric system or metamorphic assemblages.
+                A detailed user guide is supplied with the software.
+            </p>
+        </div>
+    </div>
 {% endblock %}
 {% block footer %}
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Privacy Policy</a></li>
-    <li><a href="#">Terms of Service</a></li>
 {% endblock %}

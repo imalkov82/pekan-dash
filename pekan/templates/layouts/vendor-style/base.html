@@ -25,27 +25,31 @@
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <div class="navbar-header pecube-fonts">
-            <a class="navbar-brand" href="{{ url_for('page.home')}}">
-                <span class="fa fa-fw fa-1x fa-cube text-primary"></span>
-                Pecube-Dash
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{ url_for('page.home') }}">
+                <img src="{{ url_for('static', filename='images/pecubeLogo.png') }}"
+                     class="img-responsive"
+                     width="160" height="80" title="pecube" alt="pecube"/>
             </a>
         </div>
-        <ul class="nav navbar-nav">
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{url_for('page.execution')}}"><span class="fa fa-fw fa-1x fa-paper-plane-o text-primary"></span>
-                Create execution</a>
-            </li>
-            <li><a href="{{url_for('page.results')}}"><span class="fa fa-fw fa-1x fa-binoculars text-primary"></span>
-                Lookup for results</a>
-            </li>
-        </ul>
     </div>
 </nav>
 <main class="container">
     <div class="md-margin-top">{% block heading %}{% endblock %}</div>
     {% block body %}{% endblock %}
+</main>
+
+
+<main class="container">
+    {% block pecubeinfo %}{% endblock %}
 </main>
 
 <footer class="footer text-center">
@@ -56,6 +60,8 @@
         </ul>
     </div>
 </footer>
+
+
 
 <script
         src="{{ url_for('static', filename='scripts/vendor/bootstrap.min.js') }}">
